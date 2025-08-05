@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Impacto do Desmatamento</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background: linear-gradient(135deg, #87CEEB 0%, #E0F6FF 50%, #ADD8E6 100%);
+            background-size: cover;
+            background-attachment: fixed;
+        }
+        .container {
+            text-align: center;
+            margin-top: 20px;
+            background: rgba(255, 255, 255, 0.9);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            max-width: 800px;
+            width: 90%;
+        }
+        .image-section img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 5px;
+            width: 100%; /* Adjusts image to container width */
+            max-height: 400px; /* Limits maximum height for better fit */
+            object-fit: cover; /* Ensures image maintains aspect ratio */
+        }
+        .buttons {
+            margin-top: 20px;
+        }
+        .btn {
+            padding: 10px 20px;
+            margin: 0 10px;
+            font-size: 16px;
+            cursor: pointer;
+            border: none;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+        }
+        .btn:hover {
+            animation: colorChange 2s infinite;
+        }
+        @keyframes colorChange {
+            0% { background-color: rgb(0, 255, 0); }
+            33% { background-color: rgb(0, 0, 255); }
+            66% { background-color: rgb(255, 0, 0); }
+            100% { background-color: rgb(0, 255, 0); }
+        }
+        .content {
+            display: none;
+            margin-top: 20px;
+            padding: 20px;
+            background-color: #e0e0e0;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Impacto do Desmatamento</h1>
+        <div class="image-section">
+            <!-- Espaço para link da imagem -->
+            <img src="https://embratur.com.br/wp-content/uploads/2023/01/Design-sem-nome-52-1.jpg" alt="Mata das Cataratas do Iguaçu" id="mainImage">
+        </div>
+        <div class="buttons">
+            <button class="btn" onclick="showContent('problems')">Os Problemas</button>
+            <button class="btn" onclick="showContent('consequences')">Consequências</button>
+            <button class="btn" onclick="showContent('conclusion')">Conclusão</button>
+        </div>
+        <div id="problems" class="content">
+            O desmatamento intensifica fenômenos negativos no meio ambiente e na vida das pessoas, afetando o equilíbrio da biodiversidade.
+        </div>
+        <div id="consequences" class="content">
+            Perda de habitat, aumento da temperatura e redução da qualidade de vida são algumas consequências.
+        </div>
+        <div id="conclusion" class="content">
+            É essencial adotar medidas para preservar a mata e mitigar os impactos do desmatamento.
+        </div>
+    </div>
+
+    <script>
+        function showContent(section) {
+            const contents = document.getElementsByClassName('content');
+            for (let content of contents) {
+                content.style.display = 'none';
+            }
+            document.getElementById(section).style.display = 'block';
+        }
+        // Exemplo de link da imagem (substitua pelo URL real)
+        document.getElementById('mainImage').src = 'https://example.com/iguacu-image.jpg';
+    </script>
+</body>
+</html>
